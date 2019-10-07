@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.sunrise.onactivityresult">
+
+    <application>
+        <activity
+            android:screenOrientation="unspecified"
+            android:label="@null"
+            android:configChanges="screenSize|screenLayout|fontScale|keyboardHidden|keyboard|orientation|colorMode|density|layoutDirection|locale|mcc|mnc|navigation|smallestScreenSize|touchscreen|uiMode"
+            android:name=".ProxyActivity" />
+    </application>
+
+</manifest>
