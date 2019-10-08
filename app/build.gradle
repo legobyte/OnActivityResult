@@ -1,14 +1,12 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "org.sunrse.application"
+        applicationId "org.legobyte.application"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1

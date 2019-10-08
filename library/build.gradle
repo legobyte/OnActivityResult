@@ -15,7 +15,7 @@ publish {
     artifactId = artifactProjectID
     publishVersion = publishVersionID
     desc = 'Access OnActivityResult anywhere in your Android project'
-    website = 'https://github.com/sunriseco/OnActivityResult'
+    website = 'https://github.com/legobyte/OnActivityResult'
 
 }
 

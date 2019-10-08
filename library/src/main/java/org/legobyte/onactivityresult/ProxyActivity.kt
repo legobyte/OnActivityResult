@@ -1,4 +1,4 @@
-package org.sunrise.onactivityresult
+package org.legobyte.onactivityresult
 
 import android.app.Activity
 import android.content.Intent
