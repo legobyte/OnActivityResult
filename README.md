@@ -1,5 +1,5 @@
 # OnActivityResult
-Access OnActivityResult anywhere in your Android project
+Start activityForResult from anywhere withing your application, all you need is a `Context`
 
 ## Usage
 ````kotlin
@@ -11,6 +11,22 @@ Proxy.with(context = applicationContext).listener { requestCode, resultCode, dat
 }.launch(Intent(Intent.ACTION_GET_CONTENT).apply { type = "image/*" }, requestCode = MY_REQUEST_CODE)
 ````
 `requestCode` is optional
+
+## Setup
+In your ProjectLevel `build.gradle`
+````gradle
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+````
+In your AppLevel `build.gradle`
+````gradle
+dependencies {
+    implementation 'org.legobyte:onactivityresult:1.0.0'
+}
+````
 
 ## License
 

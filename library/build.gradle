@@ -5,16 +5,17 @@ apply plugin: 'kotlin-android-extensions'
 
 publish {
 
-    def groupProjectID = 'org.sunrise'
+    def groupProjectID = 'org.legobyte'
     def artifactProjectID = 'onactivityresult'
     def publishVersionID = libraryVersion
 
-    userOrg = 'sunrise'
+    bintrayUser = 'legobyte'
+    userOrg = 'legobytes'
     repoName = 'OnActivityResult'
     groupId = groupProjectID
     artifactId = artifactProjectID
     publishVersion = publishVersionID
-    desc = 'Access OnActivityResult anywhere in your Android project'
+    desc = 'tart activityForResult from anywhere withing your application'
     website = 'https://github.com/legobyte/OnActivityResult'
 
 }
