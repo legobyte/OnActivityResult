@@ -10,12 +10,12 @@ publish {
     def publishVersionID = libraryVersion
 
     bintrayUser = 'legobyte'
-    userOrg = 'legobytes'
-    repoName = 'OnActivityResult'
+    userOrg = 'legobyte'
+    repoName = 'legobytes'
     groupId = groupProjectID
     artifactId = artifactProjectID
     publishVersion = publishVersionID
-    desc = 'tart activityForResult from anywhere withing your application'
+    desc = 'Intercept activityForResult from anywhere withing your application'
     website = 'https://github.com/legobyte/OnActivityResult'
 
 }
