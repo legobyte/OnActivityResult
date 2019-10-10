@@ -4,7 +4,7 @@ Intercept activityForResult from anywhere withing your application, all you need
 ## Usage
 ````kotlin
 Proxy.with(context = applicationContext).listener { requestCode, resultCode, data ->
-    // do something with your result
+    // handle the result
     if(resultCode == Proxy.RESULT_INTENT_UNHANDLED){
         // in this case the intent that you have provided does not match to an activity in this device.
     }
