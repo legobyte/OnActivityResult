@@ -1,8 +1,8 @@
 package org.legobyte.onactivityresult
 
 import android.app.Activity
-import android.app.Application
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -38,10 +38,13 @@ data class Launcher(private val contextBucket: ContextBucket, private val result
                 resultReceiver(requestCode, resultCode, resultIntent)
             }
         }
-        val context = contextBucket.context
+        val context = if(contextBucket.context is ContextWrapper)
+            contextBucket.context.baseContext
+        else
+            contextBucket.context
         context.startActivity(Intent(context, ProxyActivity::class.java).apply {
-            if(context is Application || context !is Activity){
-                // we can check for context wrapper too
+            if(context !is Activity){
+                // this is not an activity context
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             putExtra(Proxy.KEY_INTENT, intent)

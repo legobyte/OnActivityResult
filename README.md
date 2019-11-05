@@ -24,7 +24,7 @@ allprojects {
 In your AppLevel `build.gradle`
 ````gradle
 dependencies {
-    implementation 'org.legobyte:onactivityresult:1.0.1'
+    implementation 'org.legobyte:onactivityresult:1.0.2'
 }
 ````
 
