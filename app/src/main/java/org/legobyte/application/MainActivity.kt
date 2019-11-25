@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         selectPictureButton.setOnClickListener {
-            Proxy.with(context = applicationContext).listener { requestCode, resultCode, data ->
+
+            Proxy.with(this).listener { requestCode, resultCode, data ->
                 textView.text = "requestCode: $requestCode\nresultCode: $resultCode\nintent: $data"
                 if(resultCode == Activity.RESULT_OK){
                     imageView.visibility = View.VISIBLE
@@ -23,8 +24,8 @@ class MainActivity : AppCompatActivity() {
                 }else if(resultCode == Proxy.RESULT_INTENT_UNHANDLED){
                     textView.text = "Looks like you dont have any FileManager or Gallery application installed to pick image!"
                 }
-
             }.launch(Intent(Intent.ACTION_GET_CONTENT).apply { type = "image/*" })
+
         }
 
 
