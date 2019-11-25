@@ -38,10 +38,11 @@ data class Launcher(private val contextBucket: ContextBucket, private val result
                 resultReceiver(requestCode, resultCode, resultIntent)
             }
         }
-        val context = if(contextBucket.context is ContextWrapper)
-            contextBucket.context.baseContext
-        else
-            contextBucket.context
+        val context = when {
+            contextBucket.context is Activity -> contextBucket.context
+            contextBucket.context is ContextWrapper -> contextBucket.context.baseContext ?: contextBucket.context
+            else -> contextBucket.context
+        }
         context.startActivity(Intent(context, ProxyActivity::class.java).apply {
             if(context !is Activity){
                 // this is not an activity context
