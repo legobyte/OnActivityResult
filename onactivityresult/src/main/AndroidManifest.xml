@@ -5,7 +5,7 @@
     <application>
         <activity
             android:screenOrientation="unspecified"
-            android:label="@null"
+            android:label="Proxy activity"
             android:configChanges="screenSize|screenLayout|fontScale|keyboardHidden|keyboard|orientation|colorMode|density|layoutDirection|locale|mcc|mnc|navigation|smallestScreenSize|touchscreen|uiMode"
             android:name=".ProxyActivity" />
     </application>
