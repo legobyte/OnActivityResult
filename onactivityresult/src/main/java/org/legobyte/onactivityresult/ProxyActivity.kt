@@ -9,7 +9,7 @@ internal class ProxyActivity : Activity() {
 
 
     private fun exception(initialMessage:String):Throwable{
-        return IllegalArgumentException("$initialMessage You should start this activity with org.sunrise.onactivityresult.Proxy#with method!")
+        return IllegalArgumentException("$initialMessage You should start this activity with org.legobyte.onactivityresult.Proxy#with method!")
     }
 
     private val clientIntent by lazy {
@@ -22,8 +22,7 @@ internal class ProxyActivity : Activity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Set a Translucent NoTitleBar theme before calling super.onCreate()
-        setTheme(android.R.style.Theme_Translucent_NoTitleBar)
+        overridePendingTransition(0,0)
         super.onCreate(savedInstanceState)
 
         if(clientIntent.resolveActivity(packageManager) == null){

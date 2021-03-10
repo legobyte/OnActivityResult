@@ -14,9 +14,9 @@ import androidx.annotation.CheckResult
 object Proxy {
     @JvmStatic
     val mainThreadHandler by lazy { Handler(Looper.getMainLooper()) }
-    const val KEY_INTENT = "sunrise:intent"
-    const val KEY_REQUEST_CODE = "sunrise:request-code"
-    const val KEY_RESULT_RECEIVER = "sunrise:result-receiver"
+    const val KEY_INTENT = "legobyte:intent"
+    const val KEY_REQUEST_CODE = "legobyte:request-code"
+    const val KEY_RESULT_RECEIVER = "legobyte:result-receiver"
     const val DEFAULT_REQUEST_CODE = 10
     const val RESULT_INTENT_UNHANDLED = -10
 
@@ -38,10 +38,11 @@ data class Launcher(private val contextBucket: ContextBucket, private val result
                 resultReceiver(requestCode, resultCode, resultIntent)
             }
         }
-        val context = if(contextBucket.context is ContextWrapper)
-            contextBucket.context.baseContext
-        else
-            contextBucket.context
+        val context = when {
+            contextBucket.context is Activity -> contextBucket.context
+            contextBucket.context is ContextWrapper -> contextBucket.context.baseContext ?: contextBucket.context
+            else -> contextBucket.context
+        }
         context.startActivity(Intent(context, ProxyActivity::class.java).apply {
             if(context !is Activity){
                 // this is not an activity context

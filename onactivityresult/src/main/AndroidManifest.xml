@@ -4,6 +4,7 @@
 
     <application>
         <activity
+            android:theme="@style/ProxyTheme"
             android:screenOrientation="unspecified"
             android:label="Proxy activity"
             android:configChanges="screenSize|screenLayout|fontScale|keyboardHidden|keyboard|orientation|colorMode|density|layoutDirection|locale|mcc|mnc|navigation|smallestScreenSize|touchscreen|uiMode"
